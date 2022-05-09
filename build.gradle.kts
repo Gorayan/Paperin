@@ -46,8 +46,8 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("maven") {
-                groupId = "com.github.gorayan"
-                artifactId = "paperin"
+                groupId = "com.github.Gorayan"
+                artifactId = "Paperin"
                 version = "${findProperty("version")}"
                 from(components["kotlin"])
             }
