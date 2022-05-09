@@ -1,3 +1,4 @@
 rootProject.name = 'Paperin'
 
 include("general")
+include("sample")

@@ -11,4 +11,16 @@ interface BukkitRunnableObservable : Cancelable {
      */
     fun onCancel(callback: () -> Unit)
 
+    /**
+     * Runnableが終了したときのコールバックを追加
+     * @param callback コールバック
+     */
+    fun onFinish(callback: () -> Unit)
+
+    /**
+     * Runnable内でエラーが起きたときのコールバックを追加
+     * @param callback コールバック
+     */
+    fun onError(callback: (Exception) -> Unit)
+
 }
