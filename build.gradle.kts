@@ -2,18 +2,30 @@ plugins {
     kotlin("jvm").version("1.6.10")
 }
 
-repositories {
+allprojects {
 
-    mavenCentral()
+    apply(plugin = "kotlin")
 
-    // Paper API
-    maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
+    repositories {
 
-}
+        mavenCentral()
 
-dependencies {
+        // Paper API
+        maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
 
-    // Paper API
-    compileOnly("io.papermc.paper:paper-api:${findProperty("paper-api-version")}")
+    }
+
+    dependencies {
+
+        // Kotlin
+        implementation(kotlin("stdlib"))
+
+        // Test
+        testImplementation(kotlin("test"))
+
+        // Paper API
+        compileOnly("io.papermc.paper:paper-api:${findProperty("paper-api-version")}")
+
+    }
 
 }
