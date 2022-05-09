@@ -41,6 +41,16 @@ allprojects {
 
 }
 
+tasks {
+
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "16"
+        }
+    }
+
+}
+
 afterEvaluate {
 
     publishing {
