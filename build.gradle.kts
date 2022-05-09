@@ -1,5 +1,23 @@
 plugins {
     kotlin("jvm").version("1.6.10")
+    `maven-publish`
+}
+
+dependencies {
+
+    // General
+    implementation(project(":general"))
+
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "net.gorayan.mc"
+            artifactId = "paperin"
+            version = "${findProperty("version")}"
+        }
+    }
 }
 
 allprojects {
